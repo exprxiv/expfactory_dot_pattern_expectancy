@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Dot Pattern Expectancy</title>
+    <link rel='stylesheet' type='text/css' href='assets/css/font.css'>
+    <link rel='stylesheet' type='text/css' href='assets/css/jspsych.css'>
+    <link rel='stylesheet' type='text/css' href='assets/css/default_style.css'>
+    <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
+  </head>
+
+<body>
+<!-- These are minified dependencies -->
+  <script src='dependencies/jquery.js'></script>
+  <script src='dependencies/math.js'></script>
+<!-- These are the main experiment presentation scripts -->
+  <script src='dependencies/jspsych/jspsych.js'></script>
+  <script src='dependencies/jspsych/plugins/jspsych-call-function.js'></script>
+  <script src='dependencies/jspsych/plugins/jspsych-survey-text.js'></script>
+  <script src='dependencies/jspsych/plugins/jspsych-text.js'></script>
+<!-- These are custom scripts from the Poldrack Lab to export more measurements -->
+  <script src='dependencies/poldrack_plugins/jspsych-poldrack-text.js'></script>
+  <script src='dependencies/poldrack_plugins/jspsych-poldrack-instructions.js'></script>
+  <script src='dependencies/poldrack_plugins/jspsych-poldrack-attention-check.js'></script>
+  <script src='dependencies/poldrack_plugins/jspsych-poldrack-single-stim.js'></script>
+  <script src='dependencies/poldrack_plugins/jspsych-poldrack-categorize.js'></script>
+
+  <script src='dependencies/poldrack_plugins/poldrack_utils.js'></script>
+  <!-- This is the main experiment file -->
+  <script src='experiment.js'></script>
+
+  <script>
+  $( document ).ready(function() {
+
+      jsPsych.init({
+               timeline: dot_pattern_expectancy_experiment,
+               display_element: "getDisplayElement",
+               fullscreen: true,
+               on_trial_finish: function(data){
+                 addID('dot_pattern_expectancy')
+               },
+               on_finish: function(data){
+                  jsPsych.data.localSave('dot_pattern_expectancy-results.csv', 'csv');
+                  expfactory_finished = true;
+                }
+              });
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "name": "expfactory_dot_pattern_expectancy",
+    "alt_name": "Dot pattern Expectancy",
+    "description": "Identical in logic to the AX task, but the A, B, X, and Y letters from the AX-cpt correspond to different dot patterns. Substituing letters with dots makes the task more difficult which has been useful in a healthy population so that performance is not at ceiling",
+    "version": "1.0.1",
+    "repository": {"type": "git", "url": "https://github.com/exprxiv/expfactory_dot_pattern_expectancy.git"}, 
+    "contributors": ["Ian Eisenberg", "Zeynep Enkavi", "Patrick Bissett", "Vanessa Sochat", "Teon L Brooks", "Russell Poldrack"],
+    "duration": "15",
+    "engine": {"front-end": "jspsych"},
+    "ontology": [ {"convention": "Cognitive Atlas", "term": "trm_4da86c2a70a7d"} ],
+    "reference": "http://www.mitpressjournals.org/doi/pdf/10.1162/jocn_a_00709"
+}
